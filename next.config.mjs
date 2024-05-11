@@ -6,6 +6,7 @@ const nextConfig = {
   experimental:{
     reactRoot: true,
     suppressHydrationWarning: true,
+    missingSuspenseWithCSRBailout: false,
   }};
 
 export default nextConfig;

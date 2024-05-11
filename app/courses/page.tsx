@@ -2,13 +2,14 @@
 import { useGetUsersAllCoursesQuery } from "@/redux/features/courses/courseApi";
 import { useGetHeroDataQuery } from "@/redux/features/layout/layoutApi";
 import { useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Loader from "../components/Loader/Loader";
 import Header from "../components/Header";
 import Heading from "../utils/Heading";
 import CourseCard from "../components/Course/CourseCard";
 import Footer from "../components/Footer";
 import { formStyles } from "../styles/styles";
+import { Suspense } from 'react';
 
 
 const Page = () => {
