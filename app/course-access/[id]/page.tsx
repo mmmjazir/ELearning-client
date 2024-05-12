@@ -15,7 +15,7 @@ const Page:FC<Props> = ({params}) => {
   const id = params.id;
   const {user} = useSelector((state:any) => state.auth);
 
-  const {isLoading,error} = useLoadUserQuery(undefined,{});
+  const {isLoading,error} = useLoadUserQuery(undefined,{refetchOnMountOrArgChange:true});
 
   useEffect(()=>{
    if(user){
@@ -27,7 +27,7 @@ const Page:FC<Props> = ({params}) => {
         redirect('/')
     }
    }
-  }, [user,error])
+  }, [user,error,id])
 
   return (
     <>
